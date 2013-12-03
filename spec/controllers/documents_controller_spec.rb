@@ -4,11 +4,11 @@ describe DocumentsController do
   render_views
 
   before :each do
-    request.env["HTTP_ACCEPT"] = 'application/json'
+    request.env['HTTP_ACCEPT'] = 'application/json'
   end
 
   describe :index do
-    it "should have the relevant JSON nodes" do
+    it 'should have the relevant JSON nodes' do
       create(:document, content: 'Hello specs', sentiment: :positive)
 
       get :index
@@ -22,7 +22,7 @@ describe DocumentsController do
   end
 
   describe :show do
-    it "should have the relevant JSON nodes" do
+    it 'should have the relevant JSON nodes' do
       doc = create(:document, content: 'Hello again specs', sentiment: :negative)
 
       get :show, id: doc.id
